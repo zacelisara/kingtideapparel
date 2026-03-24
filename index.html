@@ -619,6 +619,71 @@
   </style>
 </head>
 <body>
+  <div class="announcement-wrap">
+  <div class="announcement-track">
+    <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
+    <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
+    <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
+    <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
+  </div>
+</div>
+
+<style>
+  .announcement-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 0;
+    white-space: nowrap;
+    z-index: 999;
+  }
+
+  .announcement-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: slideBanner 18s linear infinite;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .announcement-track span {
+    display: inline-block;
+    padding-right: 48px;
+  }
+
+  .announcement-track strong {
+    font-weight: 700;
+  }
+
+  @keyframes slideBanner {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-25%);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .announcement-wrap {
+      padding: 8px 0;
+    }
+
+    .announcement-track {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .announcement-track span {
+      padding-right: 32px;
+    }
+  }
+</style>
   <header class="site-header">
     <div class="shell nav">
       <a class="brand" href="#top" aria-label="Homepage">
