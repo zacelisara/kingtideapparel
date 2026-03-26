@@ -254,6 +254,38 @@
       color: var(--muted);
     }
 
+    .icon-feature-card {
+  padding: 26px;
+}
+
+.icon-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.icon-feature-item {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(39, 95, 103, 0.08);
+  font-size: 1.2rem;
+}
+
+.icon-feature-item h3 {
+  margin: 0;
+  font-size: 0.98rem;
+  letter-spacing: -0.02em;
+}
+    
     .detail-grid, .feature-grid {
       grid-template-columns: repeat(3, 1fr);
     }
@@ -392,30 +424,43 @@
             <img src="https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png" alt="KTA Windbreaker product image" />
           </div>
 
-          <div class="card overview-copy">
-            <span class="pill">Why it stands out</span>
+          <div style="display: grid; gap: 22px;">
+            <div class="card overview-copy">
+              <span class="pill">Why it stands out</span>
 
-            <h2>Simple on purpose. Functional where it counts.</h2>
+              <h2>Simple on purpose. Functional where it counts.</h2>
 
-            <p>
-              The KTA Windbreaker is built for coastal conditions without overcomplicating things.
-              It cuts wind, handles light rain, and keeps a clean profile that works just as well
-              off the water.
-            </p>
-
-            <!-- Divider -->
-          <div style="height: 1px; background: var(--line); margin: 10px 0;"></div>
-
-            <!-- Placeholder points -->
-          <div style="display: grid; gap: 12px;">
-              <p><strong>• Built for movement</strong> — lightweight feel without restriction</p>
-              <p><strong>• Everyday wearability</strong> — doesn’t look like technical gear</p>
-              <p><strong>• Coastal ready</strong> — designed with wind + spray in mind</p>
-              <p><strong>• Your edge</strong> — add your unique selling point here</p>
+              <p>
+                The KTA Windbreaker is built for coastal conditions without overcomplicating things.
+                It cuts wind, handles light rain, and keeps a clean profile that works just as well
+                off the water.
+              </p>
             </div>
-          </div>
+
+            <div class="card icon-feature-card">
+            <div class="icon-feature-grid">
+            <div class="icon-feature-item">
+          <div class="icon-circle">🧥</div>
+          <h3>Weatherproof zippers</h3>
         </div>
+
+          <div class="icon-feature-item">
+            <div class="icon-circle">🌧️</div>
+            <h3>Light rain ready</h3>
+          </div>
+
+      <div class="icon-feature-item">
+        <div class="icon-circle">👜</div>
+        <h3>Secure pockets</h3>
       </div>
+
+      <div class="icon-feature-item">
+        <div class="icon-circle">🌬️</div>
+        <h3>Wind-resistant shell</h3>
+      </div>
+    </div>
+  </div>
+</div>
     </section>
 
     <section id="features">
