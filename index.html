@@ -4,622 +4,274 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KING TIDE APPAREL | Saltwater Fishing Gear</title>
-  <meta
-    name="description"
-    content="Premium saltwater fishing gear designed for the outdoors. Replace this text with your brand description."
-  />
+  <meta name="description" content="Premium saltwater fishing gear designed for the outdoors." />
   <style>
     :root {
       --bg: #f6f8f7;
-      --surface: rgba(255, 255, 255, 0.78);
+      --surface: rgba(255,255,255,0.78);
       --surface-strong: #ffffff;
       --text: #142226;
       --muted: #5a6b70;
-      --line: rgba(20, 34, 38, 0.09);
+      --line: rgba(20,34,38,0.09);
       --accent: #275f67;
       --accent-2: #6d8c8d;
       --sand: #d8c7aa;
-      --shadow: 0 18px 55px rgba(20, 34, 38, 0.08);
+      --shadow: 0 18px 55px rgba(20,34,38,0.08);
       --radius: 22px;
       --radius-sm: 14px;
       --max: 1200px;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
       color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(39, 95, 103, 0.12), transparent 30%),
-        linear-gradient(180deg, #f0f4f3 0%, #f6f8f7 35%, #f8f8f6 100%);
+      background: radial-gradient(circle at top left, rgba(39,95,103,0.12), transparent 30%), linear-gradient(180deg,#f0f4f3 0%,#f6f8f7 35%,#f8f8f6 100%);
       line-height: 1.5;
     }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    .shell { width: min(var(--max), calc(100% - 32px)); margin: 0 auto; }
 
-    img {
-      max-width: 100%;
-      display: block;
+    /* ── ANNOUNCEMENT ── */
+    .announcement-wrap {
+      position: relative; width: 100%; overflow: hidden;
+      background: #111; color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 10px 0; white-space: nowrap; z-index: 999;
     }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+    .announcement-track {
+      display: inline-block; white-space: nowrap;
+      animation: slideBanner 18s linear infinite;
+      font-size: 14px; letter-spacing: 0.08em;
+      text-transform: uppercase; font-weight: 500;
     }
+    .announcement-track span { display: inline-block; padding-right: 48px; }
+    .announcement-track strong { font-weight: 700; }
+    @keyframes slideBanner { 0%{transform:translateX(0)} 100%{transform:translateX(-25%)} }
 
-    .shell {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
+    /* ── HEADER ── */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
+      position: sticky; top: 0; z-index: 50;
       backdrop-filter: blur(14px);
-      background: rgba(246, 248, 247, 0.78);
-      border-bottom: 1px solid rgba(20, 34, 38, 0.06);
+      background: rgba(246,248,247,0.88);
+      border-bottom: 1px solid rgba(20,34,38,0.06);
     }
-
     .nav {
-      display: flex;
-      align-items: center;
+      display: flex; align-items: center;
       justify-content: space-between;
-      min-height: 76px;
-      gap: 20px;
+      min-height: 68px; gap: 20px;
     }
-
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      font-size: 0.95rem;
+      display: flex; align-items: center; gap: 12px;
+      font-weight: 700; letter-spacing: 0.04em;
+      text-transform: uppercase; font-size: 0.95rem;
     }
-
-    .brand-mark {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--accent), #193e45);
-      display: grid;
-      place-items: center;
-      color: white;
-      box-shadow: 0 12px 24px rgba(39, 95, 103, 0.2);
-      font-size: 1rem;
-    }
-
-    .brand-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 50%;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
+    .brand-logo { width: 48px; height: 48px; object-fit: cover; border-radius: 50%; }
+    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: 0.95rem; }
+    .nav-links a:hover { color: var(--text); }
     .nav-cta {
-      padding: 12px 18px;
-      background: var(--text);
+      padding: 10px 18px; background: var(--text);
+      color: white; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
+    }
+
+    /* ── HERO STRIP ── */
+    .hero-strip {
+      background: linear-gradient(135deg,#193e45,#275f67);
       color: white;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
+      padding: 36px 0 32px;
+      text-align: center;
     }
-
-    .hero {
-      padding: 48px 0 28px;
+    .hero-strip .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.10);
+      border-radius: 999px; padding: 7px 14px;
+      font-size: 0.8rem; letter-spacing: 0.06em;
+      text-transform: uppercase; color: rgba(255,255,255,0.9);
+      margin-bottom: 14px;
     }
-
-    .hero-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 30px;
-      background:
-        linear-gradient(135deg, rgba(20, 34, 38, 0.84), rgba(39, 95, 103, 0.72)),
-        url('https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&w=1600&q=80') center/cover;
-      box-shadow: var(--shadow);
-      min-height: 560px;
-      display: grid;
-      align-items: end;
+    .hero-strip h1 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem,3.5vw,3rem);
+      letter-spacing: -0.03em; line-height: 1.05;
     }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(180deg, rgba(0, 0, 0, 0.10) 0%, rgba(0, 0, 0, 0.45) 65%, rgba(0, 0, 0, 0.60) 100%);
+    .hero-strip p {
+      margin: 0 auto 20px;
+      color: rgba(255,255,255,0.8);
+      max-width: 54ch; font-size: 1rem;
     }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 54px;
-      display: grid;
-      gap: 20px;
-      max-width: 700px;
-      color: white;
+    .trust-row {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 18px;
+      font-size: 0.84rem; color: rgba(255,255,255,0.75);
     }
+    .trust-row span { display: flex; align-items: center; gap: 6px; }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.10);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.84rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.9);
+    /* ── PRODUCTS ── */
+    .products-section { padding: 36px 0 60px; }
+    .products-label {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 22px; flex-wrap: wrap; gap: 10px;
     }
-
-    .hero h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 4vw, 4.5rem);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-    }
-
-    .hero p {
-      margin: 0;
-      font-size: 1.05rem;
-      color: rgba(255, 255, 255, 0.84);
-      max-width: 58ch;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      padding-top: 6px;
-    }
-
-    .button,
-    button {
-      appearance: none;
-      border: none;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      border-radius: 999px;
-      padding: 14px 22px;
-      font: inherit;
-      font-weight: 600;
-      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .button:hover,
-    button:hover {
-      transform: translateY(-1px);
-    }
-
-    .button-primary {
-      background: white;
-      color: var(--text);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
-    }
-
-    .button-secondary {
-      background: rgba(255, 255, 255, 0.12);
-      color: white;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .highlights {
-      margin-top: -48px;
-      position: relative;
-      z-index: 3;
-    }
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .highlight {
-      padding: 22px;
-      border-radius: var(--radius);
-      background: var(--surface);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.45);
-      box-shadow: var(--shadow);
-    }
-
-    .highlight small {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-weight: 700;
-    }
-
-    .highlight p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    section {
-      padding: 72px 0;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 28px;
-    }
-
-    .section-head h2 {
-      margin: 0 0 8px;
-      font-size: clamp(1.8rem, 2vw, 2.5rem);
-      letter-spacing: -0.03em;
-    }
-
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 62ch;
-    }
-
+    .products-label h2 { margin: 0; font-size: 1.5rem; letter-spacing: -0.02em; }
     .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      padding: 9px 14px;
-      background: rgba(39, 95, 103, 0.08);
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 999px; padding: 8px 14px;
+      background: rgba(39,95,103,0.08); color: var(--accent);
+      font-weight: 700; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.05em;
     }
-
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 22px;
     }
 
+    /* ── PRODUCT CARD ── */
     .product-card {
       background: var(--surface-strong);
       border: 1px solid var(--line);
-      border-radius: 26px;
-      overflow: hidden;
+      border-radius: 26px; overflow: hidden;
       box-shadow: var(--shadow);
       transition: transform 0.24s ease, box-shadow 0.24s ease;
+      display: flex; flex-direction: column;
     }
-
-    .product-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 24px 58px rgba(20, 34, 38, 0.12);
-    }
-
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rgba(20,34,38,0.12); }
     .product-media {
-      position: relative;
-      aspect-ratio: 1 / 1.05;
-      overflow: hidden;
-      background: linear-gradient(180deg, #c8d6d7, #edf2f1);
+      position: relative; aspect-ratio: 1/1; overflow: hidden;
+      background: linear-gradient(180deg,#c8d6d7,#edf2f1);
     }
-
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
+    .product-media img { width: 100%; height: 100%; object-fit: cover; }
     .badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(20, 34, 38, 0.78);
-      color: white;
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+      position: absolute; top: 14px; left: 14px;
+      background: rgba(20,34,38,0.78); color: white;
+      padding: 7px 12px; border-radius: 999px;
+      font-size: 0.76rem; letter-spacing: 0.04em; text-transform: uppercase;
     }
-
-    .product-body {
-      padding: 22px;
-      display: grid;
-      gap: 14px;
+    .savings-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: #e8f5e3; color: #2a6b2a;
+      padding: 7px 11px; border-radius: 999px;
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.03em;
     }
-
-    .product-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 16px;
+    .product-body { padding: 20px; display: grid; gap: 13px; flex: 1; }
+    .product-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .product-top h3 { margin: 0; font-size: 1.08rem; letter-spacing: -0.02em; }
+    .price { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; white-space: nowrap; }
+    .price-current { font-weight: 800; font-size: 1.15rem; color: var(--text); letter-spacing: -0.02em; }
+    .price-old { font-size: 0.88rem; color: var(--muted); text-decoration: line-through; opacity: 0.8; }
+    .offer-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .offer-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 6px 11px; border-radius: 999px;
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.05em; text-transform: uppercase;
     }
-
-    .product-top h3 {
-      margin: 0;
-      font-size: 1.18rem;
-      letter-spacing: -0.02em;
-    }
-
-    .price {
-      font-weight: 700;
-      white-space: nowrap;
-      font-size: 1rem;
-    }
-
-    .product-body p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .swatches {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .swatch {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 0 0 1px rgba(20, 34, 38, 0.12);
-    }
-
-    .size-selector {
-      display: grid;
-      gap: 10px;
-    }
-
-    .size-label {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
+    .offer-pill.shipping { background: rgba(39,95,103,0.1); color: var(--accent); }
+    .offer-pill.stock { background: rgba(216,199,170,0.28); color: #6f5431; }
+    .product-body p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .size-selector { display: grid; gap: 8px; }
+    .size-label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
     .size-select {
-      width: 100%;
-      padding: 13px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #f7f9f8;
-      color: var(--text);
-      font: inherit;
-      outline: none;
+      width: 100%; padding: 12px 14px; border-radius: 14px;
+      border: 1px solid var(--line); background: #f7f9f8;
+      color: var(--text); font: inherit; outline: none;
     }
-
-    .size-select:focus {
-      border-color: rgba(39, 95, 103, 0.45);
-      box-shadow: 0 0 0 3px rgba(39, 95, 103, 0.10);
+    .size-select:focus { border-color: rgba(39,95,103,0.45); box-shadow: 0 0 0 3px rgba(39,95,103,0.10); }
+    .product-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .product-actions .button { flex: 1; min-width: 120px; padding: 13px 14px; border-radius: 14px; }
+    .button, button {
+      appearance: none; border: none; cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border-radius: 999px; padding: 13px 22px;
+      font: inherit; font-weight: 600;
+      transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
     }
+    .button:hover, button:hover { transform: translateY(-1px); }
+    .button-primary { background: white; color: var(--text); box-shadow: 0 8px 24px rgba(0,0,0,0.16); }
+    .button-dark { background: var(--text); color: white; font-size: 0.95rem; }
+    .button-dark:hover { background: #275f67; }
+    .button-light { background: #f1f4f3; color: var(--text); border: 1px solid var(--line); font-size: 0.88rem; }
 
-    .product-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    /* ── URGENCY BAR ── */
+    .urgency-bar {
+      background: #fff8ed; border: 1px solid #f0d9a0;
+      border-radius: var(--radius-sm); padding: 13px 18px;
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; font-weight: 600; color: #7a5a10;
+      margin-bottom: 22px;
     }
+    .urgency-bar span { font-weight: 400; color: #9a7020; }
 
-    .product-actions .button {
-      flex: 1;
-      min-width: 140px;
-      padding: 13px 18px;
-      border-radius: 14px;
-    }
-
-    .button-dark {
-      background: var(--text);
-      color: white;
-    }
-
-    .button-light {
-      background: #f1f4f3;
-      color: var(--text);
-      border: 1px solid var(--line);
-    }
-
-    .story {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 26px;
-      align-items: stretch;
-    }
-
-    .story-card,
-    .story-image {
-      border-radius: 28px;
-      overflow: hidden;
+    /* ── SOCIAL PROOF ── */
+    .social-proof {
+      background: var(--surface-strong); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 28px 32px;
+      margin: 0 0 28px; display: flex;
+      align-items: center; justify-content: space-around;
+      flex-wrap: wrap; gap: 20px;
       box-shadow: var(--shadow);
     }
+    .proof-stat { text-align: center; }
+    .proof-stat .num { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; color: var(--accent); }
+    .proof-stat .lbl { font-size: 0.84rem; color: var(--muted); margin-top: 2px; }
+    .proof-divider { width: 1px; height: 40px; background: var(--line); }
 
+    /* ── ABOUT & CTA (compact) ── */
+    .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 0 0 60px; }
     .story-card {
-      background: linear-gradient(180deg, #ffffff, #f7f8f7);
-      border: 1px solid var(--line);
-      padding: 36px;
-      display: grid;
-      gap: 18px;
-      align-content: center;
+      border-radius: 28px; overflow: hidden;
+      background: linear-gradient(180deg,#ffffff,#f7f8f7);
+      border: 1px solid var(--line); padding: 30px;
+      box-shadow: var(--shadow); display: grid; gap: 14px; align-content: start;
     }
-
-    .story-card h3 {
-      margin: 0;
-      font-size: clamp(1.5rem, 2.4vw, 2.4rem);
-      letter-spacing: -0.03em;
-    }
-
-    .story-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .story-list {
-      display: grid;
-      gap: 12px;
-      margin-top: 4px;
-    }
-
-    .story-list div {
-      display: flex;
-      gap: 12px;
-      align-items: start;
-      padding: 14px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .story-list div:first-child {
-      border-top: none;
-      padding-top: 0;
-    }
-
-    .story-list strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.98rem;
-    }
-
-    .story-list span {
-      color: var(--muted);
-      font-size: 0.94rem;
-    }
-
-    .story-image {
-      min-height: 460px;
-      background:
-        linear-gradient(180deg, rgba(39, 95, 103, 0.18), rgba(20, 34, 38, 0.34)),
-        url('https://images.unsplash.com/photo-1513569771920-c9e1d31714af?auto=format&fit=crop&w=1200&q=80') center/cover;
-    }
-
-    .cta {
-      padding-top: 0;
-    }
-
+    .story-card h3 { margin: 0; font-size: 1.4rem; letter-spacing: -0.02em; }
+    .story-card p { margin: 0; color: var(--muted); font-size: 0.94rem; }
+    .story-list { display: grid; gap: 0; margin-top: 4px; }
+    .story-list div { display: flex; gap: 12px; align-items: start; padding: 12px 0; border-top: 1px solid var(--line); }
+    .story-list div:first-child { border-top: none; padding-top: 0; }
+    .story-list strong { display: block; margin-bottom: 3px; font-size: 0.95rem; }
+    .story-list span { color: var(--muted); font-size: 0.9rem; }
     .cta-card {
       border-radius: 28px;
-      background: linear-gradient(135deg, #193e45, #275f67);
-      color: white;
-      padding: 38px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      background: linear-gradient(135deg,#193e45,#275f67);
+      color: white; padding: 30px;
+      display: flex; flex-direction: column;
+      justify-content: space-between; gap: 18px;
       box-shadow: var(--shadow);
     }
+    .cta-card h3 { margin: 0 0 8px; font-size: 1.4rem; letter-spacing: -0.02em; }
+    .cta-card p { margin: 0; color: rgba(255,255,255,0.82); font-size: 0.94rem; }
 
-    .cta-card h3 {
-      margin: 0 0 8px;
-      font-size: clamp(1.6rem, 2.2vw, 2.4rem);
-      letter-spacing: -0.03em;
-    }
-
-    .cta-card p {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.82);
-      max-width: 56ch;
-    }
-
-    .site-footer {
-      padding: 28px 0 42px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
+    /* ── FOOTER ── */
+    .site-footer { padding: 22px 0 36px; color: var(--muted); font-size: 0.9rem; }
     .footer-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 12px 20px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
+      display: flex; flex-wrap: wrap;
+      justify-content: space-between; gap: 10px 20px;
+      padding-top: 16px; border-top: 1px solid var(--line);
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .products-grid,
-      .highlight-grid,
-      .story {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .products-grid .product-card:last-child,
-      .highlight-grid .highlight:last-child,
-      .story-image {
-        grid-column: span 2;
-      }
+      .products-grid { grid-template-columns: 1fr 1fr; }
+      .products-grid .product-card:last-child { grid-column: span 2; }
+      .bottom-row { grid-template-columns: 1fr; }
     }
-
     @media (max-width: 760px) {
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        gap: 16px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .hero-card {
-        min-height: 500px;
-      }
-
-      .hero-content {
-        padding: 28px;
-      }
-
-      .highlight-grid,
-      .products-grid,
-      .story,
-      .products-grid .product-card:last-child,
-      .highlight-grid .highlight:last-child,
-      .story-image {
-        grid-template-columns: 1fr;
-        grid-column: auto;
-      }
-
-      .section-head,
-      .cta-card,
-      .footer-row {
-        display: grid;
-      }
-
-      section {
-        padding: 58px 0;
-      }
+      .nav { flex-wrap: wrap; justify-content: center; padding: 12px 0; }
+      .nav-links { gap: 14px; justify-content: center; flex-wrap: wrap; }
+      .products-grid, .products-grid .product-card:last-child { grid-template-columns: 1fr; grid-column: auto; }
+      .social-proof { gap: 14px; }
+      .proof-divider { display: none; }
+      .hero-strip h1 { font-size: 1.6rem; }
     }
   </style>
 </head>
 <body>
-  <div class="announcement-wrap">
+
+<!-- Announcement -->
+<div class="announcement-wrap">
   <div class="announcement-track">
     <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
     <span>Use code <strong>JACKET15</strong> for a discount • Free shipping on all jackets • </span>
@@ -628,286 +280,224 @@
   </div>
 </div>
 
-<style>
-  .announcement-wrap {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    background: #111;
-    color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    padding: 10px 0;
-    white-space: nowrap;
-    z-index: 999;
-  }
+<!-- Header -->
+<header class="site-header">
+  <div class="shell nav">
+    <a class="brand" href="#top" aria-label="Homepage">
+      <img src="https://i.imgur.com/JUWYjmL.png" class="brand-logo" alt="King Tide Apparel logo">
+      <span>KING TIDE APPAREL</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#products">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#products">View Gear</a>
+  </div>
+</header>
 
-  .announcement-track {
-    display: inline-block;
-    white-space: nowrap;
-    animation: slideBanner 18s linear infinite;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    font-weight: 500;
-  }
+<main id="top">
 
-  .announcement-track span {
-    display: inline-block;
-    padding-right: 48px;
-  }
-
-  .announcement-track strong {
-    font-weight: 700;
-  }
-
-  @keyframes slideBanner {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-25%);
-    }
-  }
-
-  @media (max-width: 768px) {
-    .announcement-wrap {
-      padding: 8px 0;
-    }
-
-    .announcement-track {
-      font-size: 12px;
-      letter-spacing: 0.06em;
-    }
-
-    .announcement-track span {
-      padding-right: 32px;
-    }
-  }
-</style>
-  <header class="site-header">
-    <div class="shell nav">
-      <a class="brand" href="#top" aria-label="Homepage">
-        <img src="https://i.imgur.com/JUWYjmL.png" class="brand-logo" alt="King Tide Apparel logo">
-        <span>KING TIDE APPAREL</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#products">Shop</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a class="nav-cta" href="#products">View Gear</a>
+  <!-- Compact hero strip -->
+  <div class="hero-strip">
+    <div class="shell">
+      <div class="eyebrow">Built for open water days</div>
+      <h1>Built for the coast. Designed for everyday.</h1>
+      <p>Lightweight, durable outerwear inspired by life on the NZ coastline. Clean, minimal pieces made to handle the elements.</p>
+      <div class="trust-row">
+        <span>✦ Free shipping on every jacket</span>
+        <span>✦ Limited drop pricing live now</span>
+        <span>✦ Overnight tracked delivery</span>
+        <span>✦ 100% recyclable packaging</span>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="shell">
-        <div class="hero-card">
-          <div class="hero-content">
-            <span class="eyebrow">Built for open water days</span>
-            <h1>Built for the coast. Designed for everyday.</h1>
-             <p>
-                Lightweight, durable outerwear inspired by life on the NZ coastline. 
-                Clean, minimal pieces made to handle the elements without looking like it.
-            </p> 
-            <div class="hero-actions">
-              <a class="button button-primary" href="#products">Shop windbreakers</a>
-              <a class="button button-secondary" href="#about">My story</a>
+  <!-- Products -->
+  <section class="products-section" id="products">
+    <div class="shell">
+
+      <!-- Social proof -->
+      <div class="social-proof">
+        <div class="proof-stat"><div class="num">$84<span style="font-size:1rem">.95</span></div><div class="lbl">Was $160 — 47% off</div></div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat"><div class="num">🚚</div><div class="lbl">Free overnight shipping NZ</div></div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat"><div class="num">3</div><div class="lbl">Colours available</div></div>
+        <div class="proof-divider"></div>
+        <div class="proof-stat"><div class="num">♻️</div><div class="lbl">Recyclable packaging</div></div>
+      </div>
+
+      <!-- Urgency -->
+      <div class="urgency-bar">
+        🔥 Limited stock remaining &mdash; <span>Sale ends when stock runs out. Select your size below to lock in your price.</span>
+      </div>
+
+      <div class="products-label">
+        <h2>Shop the range</h2>
+        <span class="pill">Drop pricing live now</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Cream White -->
+        <article class="product-card">
+          <div class="product-media">
+            <span class="badge">Cream White</span>
+            <span class="savings-badge">Save $75</span>
+            <img src="https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png" alt="KTA Windbreaker Cream White" />
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3>KTA Windbreaker – Cream White</h3>
+              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
+            </div>
+            <p>Designed locally in New Zealand with a focus on minimal design — gear that performs when it needs to without looking like technical outdoor wear.</p>
+            <div class="offer-row">
+              <span class="offer-pill stock">Limited stock</span>
+              <span class="offer-pill shipping">Free shipping</span>
+            </div>
+            <div class="size-selector">
+              <label class="size-label" for="size-cream-white">Select size</label>
+              <select class="size-select" id="size-cream-white" onchange="handleSizeSelect(this)">
+                <option value="">— Choose a size —</option>
+                <option value="https://buy.stripe.com/3cI4gBgqTf11eRA9I10Jq07">XS</option>
+                <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
+                <option value="https://buy.stripe.com/eVq9AVeiL3ij9xgbQ90Jq05">M</option>
+                <option value="https://buy.stripe.com/7sY5kF5Mfg55bFodYh0Jq04">L</option>
+                <option value="https://buy.stripe.com/cNi9AVgqTbOP6l44nH0Jq03">XL</option>
+                <option value="https://buy.stripe.com/3cI9AVeiL9GHfVEcUd0Jq01">XXL</option>
+              </select>
+            </div>
+            <div class="product-actions">
+              <a class="button button-dark buy-button" id="buy-cream-white" href="#" target="_blank" rel="noopener noreferrer">Buy now →</a>
+              <a class="button button-light" href="product-inspection/index.html">View details</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </article>
 
-    <section class="highlights">
-      <div class="shell">
-        <div class="highlight-grid">
-          <article class="highlight">
-            <small>Saltwater Ready</small>
-            <p>Lightweight, weather-ready design built to handle changing coastal conditions.</p>
-          </article>
-          <article class="highlight">
-            <small>Built Outdoors</small>
-            <p>Made for long days on the water, from early launches to late tides.</p>
-          </article>
-          <article class="highlight">
-            <small>Fast Dispatch</small>
-            <p>Quick, reliable shipping so you’re ready for your next trip without the wait.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <!-- Navy Blue -->
+        <article class="product-card">
+          <div class="product-media">
+            <span class="badge">Navy Blue</span>
+            <span class="savings-badge">Save $75</span>
+            <img src="https://zacelisara.github.io/kingtideapparel/navyBlueAegis.png" alt="KTA Windbreaker Navy Blue" />
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3>KTA Windbreaker – Navy Blue</h3>
+              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
+            </div>
+            <p>Lightweight, windproof outerwear built for shifting coastal conditions. Handles heavy wind and light rain without the bulk, with a clean everyday look.</p>
+            <div class="offer-row">
+              <span class="offer-pill stock">Limited stock</span>
+              <span class="offer-pill shipping">Free shipping</span>
+            </div>
+            <div class="size-selector">
+              <label class="size-label" for="size-navy-blue">Select size</label>
+              <select class="size-select" id="size-navy-blue" onchange="handleSizeSelect(this)">
+                <option value="">— Choose a size —</option>
+                <option value="https://buy.stripe.com/aFabJ37Un9GHgZI5rL0Jq0b">XS</option>
+                <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
+                <option value="https://buy.stripe.com/fZubJ32A39GHcJscUd0Jq09">M</option>
+                <option value="https://buy.stripe.com/3cI5kFb6z2effVEaM50Jq08">L</option>
+                <option value="https://buy.stripe.com/fZu9AV0rV7yz7p85rL0Jq02">XXL</option>
+              </select>
+            </div>
+            <div class="product-actions">
+              <a class="button button-dark buy-button" id="buy-navy-blue" href="#" target="_blank" rel="noopener noreferrer">Buy now →</a>
+              <a class="button button-light" href="product-inspection/index.html">View details</a>
+            </div>
+          </div>
+        </article>
 
-    <section id="products">
-      <div class="shell">
-        <div class="section-head">
+        <!-- Pastel Pink -->
+        <article class="product-card">
+          <div class="product-media">
+            <span class="badge">Pastel Pink</span>
+            <span class="savings-badge">Save $75</span>
+            <img src="https://zacelisara.github.io/kingtideapparel/pastelPink.png" alt="KTA Windbreaker Pastel Pink" />
+          </div>
+          <div class="product-body">
+            <div class="product-top">
+              <h3>KTA Windbreaker – Pastel Pink</h3>
+              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
+            </div>
+            <p>Relaxed fit with water-resistant construction. Features sealed zippers and practical pockets — built for time on the water, the boat, or off the coast.</p>
+            <div class="offer-row">
+              <span class="offer-pill stock">Limited stock</span>
+              <span class="offer-pill shipping">Free shipping</span>
+            </div>
+            <div class="size-selector">
+              <label class="size-label" for="size-pastel-pink">Select size</label>
+              <select class="size-select" id="size-pastel-pink" onchange="handleSizeSelect(this)">
+                <option value="">— Choose a size —</option>
+                <option value="https://buy.stripe.com/7sY9AVfmPaKLfVEbQ90Jq0d">S</option>
+                <option value="https://buy.stripe.com/00w5kF0rV8CD10K8DX0Jq0c">M</option>
+                <option value="https://buy.stripe.com/eVqaEZ4IbaKLfVEf2l0Jq00">L</option>
+              </select>
+            </div>
+            <div class="product-actions">
+              <a class="button button-dark buy-button" id="buy-pastel-pink" href="#" target="_blank" rel="noopener noreferrer">Buy now →</a>
+              <a class="button button-light" href="product-inspection/index.html">View details</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About + Contact side by side -->
+  <div class="shell bottom-row" id="about">
+
+    <div class="story-card">
+      <span class="pill">About the brand</span>
+      <h3>Made for people who feel at home near the water.</h3>
+      <p>King Tide Apparel is built around life on the New Zealand coast — where conditions change fast and gear needs to keep up.</p>
+      <div class="story-list">
+        <div>
+          <div>•</div>
           <div>
-            <span class="pill">Featured products</span>
-            <h2>Shop the range</h2>
-            <p>
-              These are placeholder product cards ready for your images, prices, descriptions, and Stripe links.
-              Duplicate or remove cards as needed.
-            </p>
+            <strong>Practical by design</strong>
+            <span>Lightweight & durable — blocks the strongest winds and unexpected showers with ease.</span>
           </div>
         </div>
-
-        <div class="products-grid">
-          <article class="product-card">
-            <div class="product-media">
-              <span class="badge">Cream White</span>
-              <img src="https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png" alt="Product image" />
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <h3>KTA Windbreaker - Cream White</h3>
-                <span class="price">$98.65</span>
-              </div>
-              <p>
-<p>
-Designed locally in New Zealand with a focus on minimal design, this is gear that performs when it needs to - without looking like technical outdoor wear.
-</p>
-
-              <div class="size-selector">
-                <label class="size-label" for="size-cream-white">Select size</label>
-                <select class="size-select" id="size-cream-white" onchange="handleSizeSelect(this)">
-                  <option value="">Select size</option>
-                  <option value="https://buy.stripe.com/3cI4gBgqTf11eRA9I10Jq07">XS</option>
-                  <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
-                  <option value="https://buy.stripe.com/eVq9AVeiL3ij9xgbQ90Jq05">M</option>
-                  <option value="https://buy.stripe.com/7sY5kF5Mfg55bFodYh0Jq04">L</option>
-                  <option value="https://buy.stripe.com/cNi9AVgqTbOP6l44nH0Jq03">XL</option>
-                  <option value="https://buy.stripe.com/3cI9AVeiL9GHfVEcUd0Jq01">XXL</option>
-                </select>
-              </div>
-              <div class="product-actions">
-                <a class="button button-dark buy-button" id="buy-cream-white" href="https://buy.stripe.com/3cI9AVeiL9GHfVEcUd0Jq01" target="_blank" rel="noopener noreferrer">Buy now</a>
-                <a class="button button-light" href="#contact">More details</a>
-                <a class="button button-light" href="product-inspection/index.html">View jacket breakdown</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-media">
-              <span class="badge">Navy Blue</span>
-              <img src="https://zacelisara.github.io/kingtideapparel/navyBlueAegis.png" alt="Placeholder product image" />
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <h3>KTA Windbreaker - Navy Blue</h3>
-                <span class="price">$98.65</span>
-              </div>
-              <p>
-Lightweight, windproof outerwear built for shifting coastal conditions. The King Tide Windbreaker is designed to handle heavy wind and light rain without the bulk, while maintaining a clean, everyday look.
-</p>
-
-              <div class="size-selector">
-                <label class="size-label" for="size-navy-blue">Select size</label>
-                <select class="size-select" id="size-navy-blue" onchange="handleSizeSelect(this)">
-                  <option value="">Select size</option>
-                  <option value="https://buy.stripe.com/aFabJ37Un9GHgZI5rL0Jq0b">XS</option>
-                  <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
-                  <option value="https://buy.stripe.com/fZubJ32A39GHcJscUd0Jq09">M</option>
-                  <option value="https://buy.stripe.com/3cI5kFb6z2effVEaM50Jq08">L</option>
-                  <option value="https://buy.stripe.com/fZu9AV0rV7yz7p85rL0Jq02">XXL</option>
-                </select>
-              </div>
-              <div class="product-actions">
-                <a class="button button-dark buy-button" id="buy-navy-blue" href="https://buy.stripe.com/fZu9AV0rV7yz7p85rL0Jq02" target="_blank" rel="noopener noreferrer">Buy now</a>
-                <a class="button button-light" href="#contact">More details</a>
-                <a class="button button-light" href="product-inspection/index.html">View jacket breakdown</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="product-media">
-              <span class="badge">Pastel Pink</span>
-              <img src="https://zacelisara.github.io/kingtideapparel/pastelPink.png" alt="Placeholder product image" />
-            </div>
-            <div class="product-body">
-              <div class="product-top">
-                <h3>KTA Windbreaker - Pastel Pink</h3>
-                <span class="price">$98.65</span>
-              </div>
-
-<p>
-Made with a relaxed fit and water-resistant construction, it features sealed zippers and practical pockets for time on the water, the boat, or off the coast.
-</p>
-
-              <div class="size-selector">
-                <label class="size-label" for="size-pastel-pink">Select size</label>
-                <select class="size-select" id="size-pastel-pink" onchange="handleSizeSelect(this)">
-                  <option value="">Select size</option>
-                  <option value="https://buy.stripe.com/7sY9AVfmPaKLfVEbQ90Jq0d">S</option>
-                  <option value="https://buy.stripe.com/00w5kF0rV8CD10K8DX0Jq0c">M</option>
-                  <option value="https://buy.stripe.com/eVqaEZ4IbaKLfVEf2l0Jq00">L</option>
-                </select>
-              </div>
-              <div class="product-actions">
-                <a class="button button-dark buy-button" id="buy-pastel-pink" href="https://buy.stripe.com/eVqaEZ4IbaKLfVEf2l0Jq00" target="_blank" rel="noopener noreferrer">Buy now</a>
-                <a class="button button-light" href="#contact">More details</a>
-                <a class="button button-light" href="product-inspection/index.html">View jacket breakdown</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="shell story">
-        <div class="story-card">
-          <span class="pill">About the brand</span>
-          <h3>Made for people who feel at home near the water.</h3>
-            <p>
-King Tide Apparel is built around life on the New Zealand coast — where conditions change fast and gear needs to keep up. We create lightweight, functional outerwear designed to handle wind and weather without compromising on clean, everyday style, so it performs when it matters and fits anywhere else.
-            </p>
-          <div class="story-list">
-            <div>
-              <div>•</div>
-              <div>
-                <strong>Practical by design</strong>
-                <span>The light-weight & durable build blocks the strongest of winds and the unexpected showers with ease.</span>
-              </div>
-            </div>
-            <div>
-              <div>•</div>
-              <div>
-                <strong>Coastal influence</strong>
-                <span>Feel the oceans breeze in the places that matter, keeping your body warm by keeping the crisp out.</span>
-              </div>
-            </div>
-            <div>
-              <div>•</div>
-              <div>
-                <strong>Packaging & Shipping</strong>
-                <span>We offer swift overnight shipping, packaged in 100% recylcable packaging materials</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="story-image" aria-label="Lifestyle placeholder image"></div>
-      </div>
-    </section>
-
-    <section class="cta" id="contact">
-      <div class="shell">
-        <div class="cta-card">
+        <div>
+          <div>•</div>
           <div>
-            <h3>Need help before you buy?</h3>
-            <p>
-              Please don't hesitate to contact me via Email, we offer snappy overnight tracked shipping, with quality branned packaging.
-            </p>
+            <strong>Coastal influence</strong>
+            <span>Feel the ocean breeze in the places that matter, staying warm without the bulk.</span>
           </div>
-          <a class="button button-primary" href="mailto:zac@kingtideapparel.shop">Contact zac@kingtideapparel.shop</a>
+        </div>
+        <div>
+          <div>•</div>
+          <div>
+            <strong>Packaging & Shipping</strong>
+            <span>Swift overnight shipping in 100% recyclable packaging materials.</span>
+          </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+
+    <div class="cta-card" id="contact">
+      <div>
+        <h3>Need help before you buy?</h3>
+        <p>Don't hesitate to reach out. We offer snappy overnight tracked shipping with quality branded packaging and are happy to answer any questions.</p>
+      </div>
+      <div style="display:grid;gap:12px;margin-top:8px;">
+        <a class="button button-primary" href="mailto:zac@kingtideapparel.shop" style="justify-content:center;">✉ zac@kingtideapparel.shop</a>
+        <div style="display:flex;gap:14px;justify-content:center;color:rgba(255,255,255,0.7);font-size:0.9rem;">
+          <a href="https://www.facebook.com/people/King-Tide-Apparel/61580081985803/#" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);">Facebook</a>
+          <span>•</span>
+          <a href="https://www.instagram.com/king_tide_apparel/" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,0.8);">Instagram</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
 
 <footer class="site-footer">
   <div class="shell footer-row">
@@ -920,30 +510,26 @@ King Tide Apparel is built around life on the New Zealand coast — where condit
   </div>
 </footer>
 
-
-  <script>
-    function handleSizeSelect(selectElement) {
-      const productCard = selectElement.closest('.product-card');
-      const buyButton = productCard.querySelector('.buy-button');
-      const selectedLink = selectElement.value;
-
-      if (selectedLink) {
-        buyButton.href = selectedLink;
-        buyButton.setAttribute('aria-disabled', 'false');
-        buyButton.style.opacity = '1';
-        buyButton.style.pointerEvents = 'auto';
-      } else {
-        buyButton.removeAttribute('href');
-        buyButton.setAttribute('aria-disabled', 'true');
-        buyButton.style.opacity = '0.65';
-        buyButton.style.pointerEvents = 'none';
-      }
+<script>
+  function handleSizeSelect(selectElement) {
+    const card = selectElement.closest('.product-card');
+    const btn = card.querySelector('.buy-button');
+    const val = selectElement.value;
+    if (val) {
+      btn.href = val;
+      btn.setAttribute('aria-disabled','false');
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+      btn.textContent = 'Buy now →';
+    } else {
+      btn.href = '#';
+      btn.setAttribute('aria-disabled','true');
+      btn.style.opacity = '0.55';
+      btn.style.pointerEvents = 'none';
+      btn.textContent = 'Select a size first';
     }
-
-    document.querySelectorAll('.size-select').forEach((selectElement) => {
-      handleSizeSelect(selectElement);
-    });
-  </script>
-
+  }
+  document.querySelectorAll('.size-select').forEach(handleSizeSelect);
+</script>
 </body>
 </html>
