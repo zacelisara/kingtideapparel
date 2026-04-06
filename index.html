@@ -5,29 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KING TIDE APPAREL | Saltwater Fishing Gear</title>
   <meta name="description" content="Premium saltwater fishing gear designed for the outdoors." />
-  
-  
 
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1676644626659974');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1676644626659974');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
-    
     :root {
       --bg: #f6f8f7;
       --surface: rgba(255,255,255,0.78);
@@ -144,44 +141,43 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
       font-weight: 700; font-size: 0.8rem;
       text-transform: uppercase; letter-spacing: 0.05em;
     }
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 22px;
-    }
 
-    /* ── PRODUCT CARD ── */
-    .product-card {
+    /* ── COMBINED PRODUCT CARD ── */
+    .combined-card {
       background: var(--surface-strong);
       border: 1px solid var(--line);
       border-radius: 26px; overflow: hidden;
       box-shadow: var(--shadow);
-      transition: transform 0.24s ease, box-shadow 0.24s ease;
-      display: flex; flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
     }
-    .product-card:hover { transform: translateY(-4px); box-shadow: 0 24px 58px rgba(20,34,38,0.12); }
-    .product-media {
-      position: relative; aspect-ratio: 1/1; overflow: hidden;
+    .combined-media {
+      position: relative;
       background: linear-gradient(180deg,#c8d6d7,#edf2f1);
+      min-height: 420px;
+      overflow: hidden;
     }
-    .product-media img { width: 100%; height: 100%; object-fit: cover; }
-    .badge {
-      position: absolute; top: 14px; left: 14px;
-      background: rgba(20,34,38,0.78); color: white;
-      padding: 7px 12px; border-radius: 999px;
-      font-size: 0.76rem; letter-spacing: 0.04em; text-transform: uppercase;
+    .combined-media img {
+      width: 100%; height: 100%; object-fit: cover;
+      position: absolute; top: 0; left: 0;
+      transition: opacity 0.3s ease;
     }
     .savings-badge {
       position: absolute; top: 14px; right: 14px;
       background: #e8f5e3; color: #2a6b2a;
       padding: 7px 11px; border-radius: 999px;
       font-size: 0.76rem; font-weight: 700; letter-spacing: 0.03em;
+      z-index: 2;
     }
-    .product-body { padding: 20px; display: grid; gap: 13px; flex: 1; }
-    .product-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
-    .product-top h3 { margin: 0; font-size: 1.08rem; letter-spacing: -0.02em; }
+    .combined-body {
+      padding: 32px 28px;
+      display: flex; flex-direction: column; gap: 18px;
+    }
+    .combined-top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .combined-top h3 { margin: 0; font-size: 1.3rem; letter-spacing: -0.02em; }
     .price { display: flex; flex-direction: column; align-items: flex-end; gap: 3px; white-space: nowrap; }
-    .price-current { font-weight: 800; font-size: 1.15rem; color: var(--text); letter-spacing: -0.02em; }
+    .price-current { font-weight: 800; font-size: 1.25rem; color: var(--text); letter-spacing: -0.02em; }
     .price-old { font-size: 0.88rem; color: var(--muted); text-decoration: line-through; opacity: 0.8; }
     .offer-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
     .offer-pill {
@@ -192,17 +188,45 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
     }
     .offer-pill.shipping { background: rgba(39,95,103,0.1); color: var(--accent); }
     .offer-pill.stock { background: rgba(216,199,170,0.28); color: #6f5431; }
-    .product-body p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-    .size-selector { display: grid; gap: 8px; }
+    .combined-body p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+
+    /* ── COLOUR SWATCHES ── */
+    .colour-section { display: grid; gap: 10px; }
+    .colour-label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .colour-label span { font-weight: 400; color: var(--muted); }
+    .swatches { display: flex; gap: 10px; flex-wrap: wrap; }
+    .swatch {
+      width: 36px; height: 36px; border-radius: 50%;
+      cursor: pointer; border: 3px solid transparent;
+      transition: border-color 0.18s ease, transform 0.18s ease;
+      outline: none;
+      position: relative;
+    }
+    .swatch:hover { transform: scale(1.1); }
+    .swatch.active { border-color: var(--accent); }
+    .swatch.active::after {
+      content: ''; position: absolute;
+      inset: -5px; border-radius: 50%;
+      border: 2px solid var(--accent);
+    }
+    .swatch-cream { background: #f5f0e6; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.12); }
+    .swatch-navy { background: #1a2b4a; }
+    .swatch-pink { background: #f0b8c4; }
+
+    /* ── SIZE SELECTOR ── */
+    .size-section { display: grid; gap: 8px; }
     .size-label { font-size: 0.88rem; font-weight: 600; color: var(--text); }
     .size-select {
       width: 100%; padding: 12px 14px; border-radius: 14px;
       border: 1px solid var(--line); background: #f7f9f8;
       color: var(--text); font: inherit; outline: none;
+      font-size: 0.95rem;
     }
     .size-select:focus { border-color: rgba(39,95,103,0.45); box-shadow: 0 0 0 3px rgba(39,95,103,0.10); }
-    .product-actions { display: flex; gap: 10px; flex-wrap: wrap; }
-    .product-actions .button { flex: 1; min-width: 120px; padding: 13px 14px; border-radius: 14px; }
+
+    /* ── ACTIONS ── */
+    .product-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .product-actions .button { flex: 1; min-width: 120px; padding: 14px 16px; border-radius: 14px; font-size: 0.97rem; }
     .button, button {
       appearance: none; border: none; cursor: pointer;
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -240,7 +264,7 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
     .proof-stat .lbl { font-size: 0.84rem; color: var(--muted); margin-top: 2px; }
     .proof-divider { width: 1px; height: 40px; background: var(--line); }
 
-    /* ── ABOUT & CTA (compact) ── */
+    /* ── ABOUT & CTA ── */
     .bottom-row { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; padding: 0 0 60px; }
     .story-card {
       border-radius: 28px; overflow: hidden;
@@ -275,18 +299,19 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .products-grid { grid-template-columns: 1fr 1fr; }
-      .products-grid .product-card:last-child { grid-column: span 2; }
+    @media (max-width: 860px) {
+      .combined-card { grid-template-columns: 1fr; }
+      .combined-media { min-height: 320px; position: relative; }
+      .combined-media img { position: relative; width: 100%; height: 320px; object-fit: cover; }
       .bottom-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 760px) {
       .nav { flex-wrap: wrap; justify-content: center; padding: 12px 0; }
       .nav-links { gap: 14px; justify-content: center; flex-wrap: wrap; }
-      .products-grid, .products-grid .product-card:last-child { grid-template-columns: 1fr; grid-column: auto; }
       .social-proof { gap: 14px; }
       .proof-divider { display: none; }
       .hero-strip h1 { font-size: 1.6rem; }
+      .combined-body { padding: 22px 18px; }
     }
   </style>
 </head>
@@ -305,7 +330,7 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
 <!-- Header -->
 <header class="site-header">
   <div class="shell nav">
-    <a class="brand" href="#top" aria-label="Homepage">
+    <a class="brand" href="#products" aria-label="Homepage">
       <img src="https://i.imgur.com/JUWYjmL.png" class="brand-logo" alt="King Tide Apparel logo">
       <span>KING TIDE APPAREL</span>
     </a>
@@ -352,121 +377,66 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
 
       <!-- Urgency -->
       <div class="urgency-bar">
-        🔥 Limited stock remaining &mdash; <span>Sale ends when stock runs out. Select your size below to lock in your price.</span>
+        🔥 Limited stock remaining — <span>Sale ends when stock runs out. Select your colour and size below to lock in your price.</span>
       </div>
 
       <div class="products-label">
-        <h2>Shop the range</h2>
+        <h2>KTA Windbreaker</h2>
         <span class="pill">Drop pricing live now</span>
       </div>
 
-      <div class="products-grid">
+      <!-- Single combined product card -->
+      <div class="combined-card">
 
-        <!-- Cream White -->
-        <article class="product-card">
-          <div class="product-media">
-            <span class="badge">Cream White</span>
-            <span class="savings-badge">Save $75</span>
-            <img src="https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png" alt="KTA Windbreaker Cream White" />
-          </div>
-          <div class="product-body">
-            <div class="product-top">
-              <h3>KTA Windbreaker – Cream White</h3>
-              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
-            </div>
-            <p>Designed locally in New Zealand with a focus on minimal design — gear that performs when it needs to without looking like technical outdoor wear.</p>
-            <div class="offer-row">
-              <span class="offer-pill stock">Limited stock</span>
-              <span class="offer-pill shipping">Free shipping</span>
-            </div>
-            <div class="size-selector">
-              <label class="size-label" for="size-cream-white">Select size</label>
-              <select class="size-select" id="size-cream-white" onchange="handleSizeSelect(this)">
-                <option value="">— Choose a size —</option>
-                <option value="https://buy.stripe.com/3cI4gBgqTf11eRA9I10Jq07">XS</option>
-                <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
-                <option value="https://buy.stripe.com/eVq9AVeiL3ij9xgbQ90Jq05">M</option>
-                <option value="https://buy.stripe.com/7sY5kF5Mfg55bFodYh0Jq04">L</option>
-                <option value="https://buy.stripe.com/cNi9AVgqTbOP6l44nH0Jq03">XL</option>
-                <option value="https://buy.stripe.com/3cI9AVeiL9GHfVEcUd0Jq01">XXL</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <a class="button button-dark buy-button" id="buy-cream-white" href="#" onclick="fbq('track', 'InitiateCheckout')" target="_blank" rel="noopener noreferrer">Buy now →</a>
-              <a class="button button-light" href="product-inspection/index.html">View details</a>
-            </div>
-          </div>
-        </article>
+        <!-- Media panel -->
+        <div class="combined-media" id="product-media">
+          <span class="savings-badge">Save $75</span>
+          <img id="product-img" src="https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png" alt="KTA Windbreaker" />
+        </div>
 
-        <!-- Navy Blue -->
-        <article class="product-card">
-          <div class="product-media">
-            <span class="badge">Navy Blue</span>
-            <span class="savings-badge">Save $75</span>
-            <img src="https://zacelisara.github.io/kingtideapparel/navyBlueAegis.png" alt="KTA Windbreaker Navy Blue" />
+        <!-- Body panel -->
+        <div class="combined-body">
+          <div class="combined-top">
+            <h3 id="product-title">KTA Windbreaker – Cream White</h3>
+            <span class="price">
+              <span class="price-current">$84.95</span>
+              <span class="price-old">$160</span>
+            </span>
           </div>
-          <div class="product-body">
-            <div class="product-top">
-              <h3>KTA Windbreaker – Navy Blue</h3>
-              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
-            </div>
-            <p>Lightweight, windproof outerwear built for shifting coastal conditions. Handles heavy wind and light rain without the bulk, with a clean everyday look.</p>
-            <div class="offer-row">
-              <span class="offer-pill stock">Limited stock</span>
-              <span class="offer-pill shipping">Free shipping</span>
-            </div>
-            <div class="size-selector">
-              <label class="size-label" for="size-navy-blue">Select size</label>
-              <select class="size-select" id="size-navy-blue" onchange="handleSizeSelect(this)">
-                <option value="">— Choose a size —</option>
-                <option value="https://buy.stripe.com/aFabJ37Un9GHgZI5rL0Jq0b">XS</option>
-                <option value="https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06">S</option>
-                <option value="https://buy.stripe.com/fZubJ32A39GHcJscUd0Jq09">M</option>
-                <option value="https://buy.stripe.com/3cI5kFb6z2effVEaM50Jq08">L</option>
-                <option value="https://buy.stripe.com/fZu9AV0rV7yz7p85rL0Jq02">XXL</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <a class="button button-dark buy-button" id="buy-navy-blue" href="#" onclick="fbq('track', 'InitiateCheckout')" target="_blank" rel="noopener noreferrer">Buy now →</a>
-              <a class="button button-light" href="product-inspection/index.html">View details</a>
-            </div>
-          </div>
-        </article>
 
-        <!-- Pastel Pink -->
-        <article class="product-card">
-          <div class="product-media">
-            <span class="badge">Pastel Pink</span>
-            <span class="savings-badge">Save $75</span>
-            <img src="https://zacelisara.github.io/kingtideapparel/pastelPink.png" alt="KTA Windbreaker Pastel Pink" />
-          </div>
-          <div class="product-body">
-            <div class="product-top">
-              <h3>KTA Windbreaker – Pastel Pink</h3>
-              <span class="price"><span class="price-current">$84.95</span><span class="price-old">$160</span></span>
-            </div>
-            <p>Relaxed fit with water-resistant construction. Features sealed zippers and practical pockets — built for time on the water, the boat, or off the coast.</p>
-            <div class="offer-row">
-              <span class="offer-pill stock">Limited stock</span>
-              <span class="offer-pill shipping">Free shipping</span>
-            </div>
-            <div class="size-selector">
-              <label class="size-label" for="size-pastel-pink">Select size</label>
-              <select class="size-select" id="size-pastel-pink" onchange="handleSizeSelect(this)">
-                <option value="">— Choose a size —</option>
-                <option value="https://buy.stripe.com/7sY9AVfmPaKLfVEbQ90Jq0d">S</option>
-                <option value="https://buy.stripe.com/00w5kF0rV8CD10K8DX0Jq0c">M</option>
-                <option value="https://buy.stripe.com/eVqaEZ4IbaKLfVEf2l0Jq00">L</option>
-              </select>
-            </div>
-            <div class="product-actions">
-              <a class="button button-dark buy-button" id="buy-pastel-pink" href="#" onclick="fbq('track', 'InitiateCheckout')" target="_blank" rel="noopener noreferrer">Buy now →</a>
-              <a class="button button-light" href="product-inspection/index.html">View details</a>
-            </div>
-          </div>
-        </article>
+          <p id="product-desc">Designed locally in New Zealand with a focus on minimal design — gear that performs when it needs to without looking like technical outdoor wear.</p>
 
+          <div class="offer-row">
+            <span class="offer-pill stock">Limited stock</span>
+            <span class="offer-pill shipping">Free shipping</span>
+          </div>
+
+          <!-- Colour swatches -->
+          <div class="colour-section">
+            <div class="colour-label">Colour: <span id="colour-name-display">Cream White</span></div>
+            <div class="swatches">
+              <button class="swatch swatch-cream active" data-colour="cream-white" title="Cream White" aria-label="Cream White"></button>
+              <button class="swatch swatch-navy" data-colour="navy-blue" title="Navy Blue" aria-label="Navy Blue"></button>
+              <button class="swatch swatch-pink" data-colour="pastel-pink" title="Pastel Pink" aria-label="Pastel Pink"></button>
+            </div>
+          </div>
+
+          <!-- Size selector -->
+          <div class="size-section">
+            <label class="size-label" for="size-select">Select size</label>
+            <select class="size-select" id="size-select" onchange="handleSizeSelect()">
+              <option value="">— Choose a size —</option>
+            </select>
+          </div>
+
+          <!-- Actions -->
+          <div class="product-actions">
+            <a class="button button-dark" id="buy-button" href="#" onclick="fbq('track', 'InitiateCheckout')" target="_blank" rel="noopener noreferrer" style="opacity:0.55;pointer-events:none;">Select a size first</a>
+            <a class="button button-light" href="product-inspection/index.html">View details</a>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -482,7 +452,7 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
           <div>•</div>
           <div>
             <strong>Practical by design</strong>
-            <span>Lightweight & durable — blocks the strongest winds and unexpected showers with ease.</span>
+            <span>Lightweight &amp; durable — blocks the strongest winds and unexpected showers with ease.</span>
           </div>
         </div>
         <div>
@@ -495,7 +465,7 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
         <div>
           <div>•</div>
           <div>
-            <strong>Packaging & Shipping</strong>
+            <strong>Packaging &amp; Shipping</strong>
             <span>Swift overnight shipping in 100% recyclable packaging materials.</span>
           </div>
         </div>
@@ -533,25 +503,118 @@ src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
 </footer>
 
 <script>
-  function handleSizeSelect(selectElement) {
-    const card = selectElement.closest('.product-card');
-    const btn = card.querySelector('.buy-button');
-    const val = selectElement.value;
+  // ── Product data ──
+  const products = {
+    'cream-white': {
+      title: 'KTA Windbreaker – Cream White',
+      label: 'Cream White',
+      img: 'https://zacelisara.github.io/kingtideapparel/whiteAegisMain.png',
+      desc: 'Designed locally in New Zealand with a focus on minimal design — gear that performs when it needs to without looking like technical outdoor wear.',
+      sizes: [
+        { label: 'XS', url: 'https://buy.stripe.com/3cI4gBgqTf11eRA9I10Jq07' },
+        { label: 'S',  url: 'https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06' },
+        { label: 'M',  url: 'https://buy.stripe.com/eVq9AVeiL3ij9xgbQ90Jq05' },
+        { label: 'L',  url: 'https://buy.stripe.com/7sY5kF5Mfg55bFodYh0Jq04' },
+        { label: 'XL', url: 'https://buy.stripe.com/cNi9AVgqTbOP6l44nH0Jq03' },
+        { label: 'XXL',url: 'https://buy.stripe.com/3cI9AVeiL9GHfVEcUd0Jq01' },
+      ]
+    },
+    'navy-blue': {
+      title: 'KTA Windbreaker – Navy Blue',
+      label: 'Navy Blue',
+      img: 'https://zacelisara.github.io/kingtideapparel/navyBlueAegis.png',
+      desc: 'Lightweight, windproof outerwear built for shifting coastal conditions. Handles heavy wind and light rain without the bulk, with a clean everyday look.',
+      sizes: [
+        { label: 'XS', url: 'https://buy.stripe.com/aFabJ37Un9GHgZI5rL0Jq0b' },
+        { label: 'S',  url: 'https://buy.stripe.com/aFaeVfdeHbOPbFo9I10Jq06' },
+        { label: 'M',  url: 'https://buy.stripe.com/fZubJ32A39GHcJscUd0Jq09' },
+        { label: 'L',  url: 'https://buy.stripe.com/3cI5kFb6z2effVEaM50Jq08' },
+        { label: 'XXL',url: 'https://buy.stripe.com/fZu9AV0rV7yz7p85rL0Jq02' },
+      ]
+    },
+    'pastel-pink': {
+      title: 'KTA Windbreaker – Pastel Pink',
+      label: 'Pastel Pink',
+      img: 'https://zacelisara.github.io/kingtideapparel/pastelPink.png',
+      desc: 'Relaxed fit with water-resistant construction. Features sealed zippers and practical pockets — built for time on the water, the boat, or off the coast.',
+      sizes: [
+        { label: 'S', url: 'https://buy.stripe.com/7sY9AVfmPaKLfVEbQ90Jq0d' },
+        { label: 'M', url: 'https://buy.stripe.com/00w5kF0rV8CD10K8DX0Jq0c' },
+        { label: 'L', url: 'https://buy.stripe.com/eVqaEZ4IbaKLfVEf2l0Jq00' },
+      ]
+    }
+  };
+
+  let activeColour = 'cream-white';
+
+  function selectColour(colour) {
+    activeColour = colour;
+    const p = products[colour];
+
+    // Update image
+    document.getElementById('product-img').src = p.img;
+    document.getElementById('product-img').alt = p.title;
+
+    // Update title & desc
+    document.getElementById('product-title').textContent = p.title;
+    document.getElementById('product-desc').textContent = p.desc;
+    document.getElementById('colour-name-display').textContent = p.label;
+
+    // Update swatch active states
+    document.querySelectorAll('.swatch').forEach(s => {
+      s.classList.toggle('active', s.dataset.colour === colour);
+    });
+
+    // Rebuild size dropdown
+    const sel = document.getElementById('size-select');
+    sel.innerHTML = '<option value="">— Choose a size —</option>';
+    p.sizes.forEach(sz => {
+      const opt = document.createElement('option');
+      opt.value = sz.url;
+      opt.textContent = sz.label;
+      sel.appendChild(opt);
+    });
+
+    // Reset buy button
+    resetBuyButton();
+  }
+
+  function handleSizeSelect() {
+    const sel = document.getElementById('size-select');
+    const btn = document.getElementById('buy-button');
+    const val = sel.value;
     if (val) {
       btn.href = val;
-      btn.setAttribute('aria-disabled','false');
       btn.style.opacity = '1';
       btn.style.pointerEvents = 'auto';
       btn.textContent = 'Buy now →';
     } else {
-      btn.href = '#';
-      btn.setAttribute('aria-disabled','true');
-      btn.style.opacity = '0.55';
-      btn.style.pointerEvents = 'none';
-      btn.textContent = 'Select a size first';
+      resetBuyButton();
     }
   }
-  document.querySelectorAll('.size-select').forEach(handleSizeSelect);
+
+  function resetBuyButton() {
+    const btn = document.getElementById('buy-button');
+    btn.href = '#';
+    btn.style.opacity = '0.55';
+    btn.style.pointerEvents = 'none';
+    btn.textContent = 'Select a size first';
+  }
+
+  // Swatch click listeners
+  document.querySelectorAll('.swatch').forEach(swatch => {
+    swatch.addEventListener('click', () => selectColour(swatch.dataset.colour));
+  });
+
+  // ── Scroll to products on page load ──
+  window.addEventListener('load', () => {
+    const section = document.getElementById('products');
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 120);
+    }
+  });
 </script>
 </body>
 </html>
