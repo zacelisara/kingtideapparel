@@ -8,20 +8,24 @@
 
   <!-- Meta Pixel Code -->
   <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1676644626659974');
-  fbq('track', 'PageView');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1676644626659974');
+    fbq('track', 'PageView');
   </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
-  /></noscript>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1676644626659974&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
   <!-- End Meta Pixel Code -->
 
   <style>
@@ -431,7 +435,7 @@
 
           <!-- Actions -->
           <div class="product-actions">
-            <a class="button button-dark" id="buy-button" href="#" onclick="fbq('track', 'InitiateCheckout')" target="_blank" rel="noopener noreferrer" style="opacity:0.55;pointer-events:none;">Select a size first</a>
+            <a class="button button-dark" id="buy-button" href="#" target="_blank" rel="noopener noreferrer" style="opacity:0.55;pointer-events:none;">Select a size first</a>
             <a class="button button-light" href="product-inspection/index.html">View details</a>
           </div>
         </div>
@@ -503,6 +507,12 @@
 </footer>
 
 <script>
+  function trackMetaEvent(eventName, params = {}) {
+    if (typeof window.fbq === 'function') {
+      window.fbq('track', eventName, params);
+    }
+  }
+
   // ── Product data ──
   const products = {
     'cream-white': {
@@ -577,6 +587,12 @@
 
     // Reset buy button
     resetBuyButton();
+
+    trackMetaEvent('ViewContent', {
+      content_name: p.title,
+      content_category: 'Windbreaker',
+      content_type: 'product'
+    });
   }
 
   function handleSizeSelect() {
@@ -606,6 +622,25 @@
     swatch.addEventListener('click', () => selectColour(swatch.dataset.colour));
   });
 
+  // Track checkout intent on the actual click
+  document.getElementById('buy-button').addEventListener('click', (event) => {
+    const sel = document.getElementById('size-select');
+    const selectedOption = sel.options[sel.selectedIndex];
+
+    if (!sel.value) {
+      event.preventDefault();
+      return;
+    }
+
+    trackMetaEvent('InitiateCheckout', {
+      content_name: document.getElementById('product-title').textContent,
+      content_category: 'Windbreaker',
+      content_type: 'product',
+      variant: document.getElementById('colour-name-display').textContent,
+      size: selectedOption ? selectedOption.textContent : ''
+    });
+  });
+
   // ── Scroll to products on page load ──
   window.addEventListener('load', () => {
     const section = document.getElementById('products');
@@ -614,6 +649,9 @@
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 120);
     }
+
+    // Initialize product state and send an initial ViewContent
+    selectColour(activeColour);
   });
 </script>
 </body>
